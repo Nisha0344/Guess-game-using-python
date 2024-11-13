@@ -1,0 +1,155 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "53a5550f",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "enter your nameNisha\n",
+      "welcome to the Game World Nisha\n",
+      "we are going to give you 6 attempt for the gussing\n"
+     ]
+    }
+   ],
+   "source": [
+    "import random"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "30047eb5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "words=['apple','oracle','amazon','microsoft','Orrange','Cat','Dog']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1e0017ae",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# choose random word from the list\n",
+    "guessed_word = random.choice(words)\n",
+    "gussed_word"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3a8a9cce",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "hint=gussed_word[0]+gussed_word[-1]\n",
+    "hint"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4d458ec6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "store_g_l=[]\n",
+    "try_p=6\n",
+    "a=input('enter your name')\n",
+    "print('welcome to the Game World',a)\n",
+    "print('we are going to give you 6 attempt for the gussing'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "53249a76",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for guess in range(try_p):\n",
+    "    while True:\n",
+    "        letter = input('Guess the letter: ')\n",
+    "        \n",
+    "        if len(letter)==1:\n",
+    "            break;\n",
+    "        else:\n",
+    "            print('oops! Please Guess a letter!')\n",
+    "            \n",
+    "        if letter in guessed_word:\n",
+    "            print('Yes!')\n",
+    "            store_g_l.append(letter)\n",
+    "        else:\n",
+    "            print('No!')\n",
+    "        if guess==3:\n",
+    "            print()\n",
+    "            clue_request = input('would you like a clue?')\n",
+    "            if clue_request.lower().startswith('y'):\n",
+    "                print()\n",
+    "                print('CLUE: The first and last letter of the word is: ',hint)\n",
+    "            else:\n",
+    "                print('You\\ are very confident!' )\n",
+    "                \n",
+    "print()\n",
+    "print('''Now Let's see what have you guessed so far. You have guessed:''',len(store_g_l),'letters correctly.')\n",
+    "print('These letters are: ',store_g_l)\n",
+    "\n",
+    "\n",
+    "word_guess = input('Guess the whole word:')\n",
+    "if word_guess.lower() == guessed_word:\n",
+    "    print('congrats! you are correct')\n",
+    "else:\n",
+    "    print('sorry! The anser was,', gussed_word)\n",
+    "print()\n",
+    "input('Please press Enter to leave the program')\n",
+    "                "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1c516846",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3df9c8f7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
